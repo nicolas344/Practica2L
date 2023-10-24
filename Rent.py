@@ -15,11 +15,13 @@ def registrar_auto():
     tarifa_diaria = float(input("Tarifa Diaria: "))
 
     nuevo_auto = Auto(num_serie, marca, modelo, anio_fabricacion, tarifa_diaria)
-
     global autos_disponibles
 
     autos_disponibles = agregar_al_principio(autos_disponibles, crear_nodo(nuevo_auto))
 
+def ver_autos_disponibles():
+    print("Autos Disponibles:")
+    mostrar_autos(autos_disponibles)
 
 def alquilar_auto():
     global autos_disponibles, autos_alquilados
