@@ -1,4 +1,3 @@
-from Car import Auto
 
 class Nodo:
     def __init__(self, auto, siguiente=None):

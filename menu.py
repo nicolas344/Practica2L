@@ -1,53 +1,58 @@
-from Rent import *
-from PersistentList import *
+from Rent import Rent
 
 
-def menu():
-    while True:
+class Menu:
 
-        print("Menú:")
+    def __init__(self):
+        self.rent = Rent()
 
-        print("1. Registrar un nuevo auto")
+    def menu(self):
 
-        print("2. Ver la lista de autos disponibles")
+        while True:
 
-        print("3. Alquilar un auto")
+            print("Menú:")
 
-        print("4. Devolver un auto")
+            print("1. Registrar un nuevo auto")
 
-        print("5. Ver la lista de autos alquilados")
+            print("2. Ver la lista de autos disponibles")
 
-        print("6. Calcular el ingreso total")
+            print("3. Alquilar un auto")
 
-        print("7. Intercambiar autos")
+            print("4. Devolver un auto")
 
-        print("8. Salir")
+            print("5. Ver la lista de autos alquilados")
 
-        opcion = input("Elija una opción: ")
+            print("6. Calcular el ingreso total")
 
-        if opcion == "1":
-            registrar_auto()
+            print("7. Intercambiar autos")
 
-        elif opcion == "2":
-            mostrar_autos(autos_disponibles)
+            print("8. Salir")
 
-        elif opcion == "3":
-            alquilar_auto()
+            opcion = input("Elija una opción: ")
 
-        elif opcion == "4":
-            devolver_auto()
+            if opcion == "1":
+                self.rent.registrar_auto()
 
-        elif opcion == "5":
-            mostrar_autos(autos_alquilados)
+            elif opcion == "2":
+                self.rent.ver_autos_disponibles()
 
-        elif opcion == "6":
-            calcular_ingreso_total()
+            elif opcion == "3":
+                self.rent.alquilar_auto()
 
-        elif opcion == "7":
-            intercambiar_autos()
+            elif opcion == "4":
+                self.rent.devolver_auto()
 
-        elif opcion == "8":
-            break
+            elif opcion == "5":
+                self.rent.ver_autos_alquilados()
 
-        else:
-            print("Opción no válida. Por favor, elija una opción válida.")
+            elif opcion == "6":
+                self.rent.calcular_ingreso_total()
+
+            elif opcion == "7":
+                self.rent.intercambiar_autos()
+
+            elif opcion == "8":
+                break
+
+            else:
+                print("Opción no válida. Por favor, elija una opción válida.")
